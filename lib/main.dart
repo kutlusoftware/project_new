@@ -178,7 +178,7 @@ class ActivityPage extends StatelessWidget {
                   children: [
                     Container(
                       child: Image.asset("images/news.png"),
-                      color: Colors.pink,
+                      color: const Color.fromARGB(255, 255, 118, 163),
                     ),
                     SizedBox(width: 15),
                     Column(
@@ -208,7 +208,7 @@ class ActivityPage extends StatelessWidget {
 
           // Order Kısmı
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -219,17 +219,21 @@ class ActivityPage extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Image.asset("images/shipped.png", width: 30),
-                    SizedBox(width: 5),
+                    Container(
+                      color: Colors.grey.shade50,
+                      width: 40,
+                      height: 40,
+                      child: Image.asset("images/shipped.png"),
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("2 unread messages from Xiaomi"),
+                        Text("Parcel shipped from China"),
 
                         Text(
-                          "13 Dec 2018, 09:38",
+                          "12 Dec 2018, 09:38",
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
@@ -241,24 +245,32 @@ class ActivityPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 30.0),
                   child: Divider(height: 3),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("images/warehouse.png", width: 25),
-                    SizedBox(width: 5),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Order delivered to 22 Baker St…"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        color: Colors.grey.shade50,
+                        width: 40,
+                        height: 40,
+                        child: Image.asset("images/warehouse.png"),
+                      ),
+                      SizedBox(width: 5),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Order delivered to 22 Baker St…"),
 
-                        Text(
-                          "10 Dec 2018, 08:36",
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                    Image.asset("images/wfs.png"),
-                  ],
+                          Text(
+                            "10 Dec 2018, 08:36",
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                      Image.asset("images/wfs.png"),
+                    ],
+                  ),
                 ),
               ],
             ),
